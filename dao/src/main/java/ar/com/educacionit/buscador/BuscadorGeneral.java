@@ -21,7 +21,7 @@ public class BuscadorGeneral extends BuscadorBase {
 	}
 
 	@Override
-	public String getOrden() {
+	public String getOrden() {//Redifinicion
 		return "order by titulo desc";
 	}
 }

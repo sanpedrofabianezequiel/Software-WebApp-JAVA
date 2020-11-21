@@ -7,29 +7,31 @@ public class CineMain {
 	public static void main(String[] args) {
 		
 		//lista de persona
-		Object[] alquienConEntradas = new Object[4];
+		Object[] alguienConEntradas  = new Object[4];
 		
-		Cliente c1 = new Cliente("lucas");
-		IEntrada p1 = new Cliente("javier");
-		Colado col1 = new Colado("Sol");
-		Alien a = new Alien();
+		Cliente c1= new Cliente("Lucas");
+		IEntrada p1= new Cliente("Javier");
+		Colado col1= new Colado("Sol");
+		Alien a= new Alien();
 		
-		alquienConEntradas[0] = c1;
-		alquienConEntradas[1] = p1;
-		alquienConEntradas[2] = a;
-		alquienConEntradas[3] = col1;
+		alguienConEntradas[0]=c1;
+		alguienConEntradas[1]=p1;
+		alguienConEntradas[2]=a;
+		alguienConEntradas[3]=col1;
+		//personas[2]=col1;
 		
-		for(Object alguien : alquienConEntradas) {
+		for (Object item : alguienConEntradas) {
 			
-			//si la persona cumple el contrato 
-			//si implementa la interfaz
-			if(alguien instanceof IEntrada) {
-				
-				Entrada entrada = ((IEntrada)alguien).getEntrada();
-				
-				System.out.println("Entrada:" + entrada.getLugar() + " -" + entrada.getTipo() );
-			} else {
-				System.out.println("NO entra al cine NO tiene entrada");
+			Entrada entrada=((IEntrada)item).getEntrada();//UPDOWN Casting
+			
+			if (item instanceof IEntrada) {//Determinamos is la persona Implementa la IEntrada
+				if (item instanceof Persona) {
+					System.out.println("Entrando al cine: "+ ((Persona)item).getNombre());
+				}else if(item instanceof Alien) {
+					System.out.println("Planeta de origien: " + ((Alien)item).getPlanetaOrigen());
+				}else {
+					System.out.println("Entrada al cine Desconocido");
+				}				
 			}
 		}
 	}

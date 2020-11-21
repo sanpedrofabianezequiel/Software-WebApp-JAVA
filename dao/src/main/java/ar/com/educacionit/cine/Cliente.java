@@ -9,6 +9,7 @@ public class Cliente extends Persona implements IEntrada {
 	}
 
 	public Entrada getEntrada() {
+		// TODO Auto-generated method stub
 		return new Entrada();
 	}
 }

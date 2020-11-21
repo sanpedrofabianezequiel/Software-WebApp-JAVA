@@ -9,7 +9,7 @@ public class Alien implements IEntrada {
 	}
 	
 	public Entrada getEntrada() {
-		Entrada entradaAlien = new Entrada("VIP", "Abajo");
-		return entradaAlien;
+		Entrada entrada = new Entrada("VIP","Abajo");
+		return entrada;
 	}
 }
