@@ -13,7 +13,15 @@ public class ClassCastExceptionMain2 {
 		//CTRL+T Determinamos todas las clases 
 		BuscadorBase b= new BuscadorLibro("mouse");
 		BuscadorLibro bl= (BuscadorLibro) b;
-		BuscadorPelicula bp= (BuscadorPelicula)b;
+		
+		
+		//Lo comparo con la clase que quiero asignarla en u futuro
+		if (BuscadorPelicula.class.isAssignableFrom(b.getClass())) {
+			
+			BuscadorPelicula bp= (BuscadorPelicula)b;//No se puede convertir de LIbro a pelicula
+
+		}
+		
 		
 	}
 
