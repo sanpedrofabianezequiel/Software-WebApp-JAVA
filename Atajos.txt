@@ -1,0 +1,2 @@
+CTRL +T Sobre una clase determina, qienes heredan del mismo
+en Debug podemos usar una especie de Csharp Interactivo con CTRL + SHIFT + I

@@ -7,6 +7,15 @@ public class ClassCastExceptionMain {
 			//Padre p = new Hijo();
 		//Dinamic Binding
 		
+		Object saludo= 1;
+		
+		if (saludo != null) {
+			/*String valorStr= (String) saludo;//ctrl+shit+i
+			System.out.println(valorStr);*/
+			
+			//Integer valor =  Integer.parseInt(saludo.toString());
+			System.out.println(saludo);
+		}
 	}
 
 }
