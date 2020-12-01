@@ -3,7 +3,9 @@ package ar.com.educacionit.exeptions;
 import ar.com.educacionit.buscador.BuscadorBase;
 import ar.com.educacionit.buscador.BuscadorGeneral;
 import ar.com.educacionit.buscador.BuscadorLibro;
+import ar.com.educacionit.buscador.BuscadorPelicula;
 import ar.com.educacionit.model.Articulo;
+import java.lang.*;
 
 public class ExceptionMain {
 
@@ -18,7 +20,7 @@ public class ExceptionMain {
 			
 			Articulo[] valor = b.buscar();
 			
-		} catch (NullPointerException ex) {
+		} catch (NullPointerException | ClassCastException | ArithmeticException ex) {
 			
 			System.err.print(ex);
 			b= new BuscadorGeneral("clave");
