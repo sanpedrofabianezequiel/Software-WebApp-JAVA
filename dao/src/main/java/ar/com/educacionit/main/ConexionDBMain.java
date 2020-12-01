@@ -8,9 +8,7 @@ public class ConexionDBMain {
 		// TODO Auto-generated method stub
 
 		//Conectamos a la DB
-		AdministradorConexiones ac= new AdministradorConexiones();
-		ac.setUserName("INVALIDO");
-		ac.setPassword("VALOR");
+		AdministradorConexiones ac= new AdministradorConexiones("invalido","invalido");
 		Conexion con ;
 		
 		

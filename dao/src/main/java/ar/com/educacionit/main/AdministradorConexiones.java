@@ -11,6 +11,15 @@ public class AdministradorConexiones {
 		this.userName=name;
 		
 	}
+	
+	
+public AdministradorConexiones(String userName, String password) {
+		super();
+		this.userName = userName;
+		this.password = password;
+	}
+
+
 //Para ir para atras es ALT +  <- 
 	public void setPassword(String pass) {
 		// TODO Auto-generated method stub
