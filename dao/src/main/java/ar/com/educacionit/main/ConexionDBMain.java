@@ -21,6 +21,8 @@ public class ConexionDBMain {
 		} catch (CredencialesInvalidasException cie) {
 			
 			System.out.println("No se ha podido conectar a la db: " +cie.getMessage());
+
+			System.out.println("No se ha podido conectar a la db: " +cie.getMsjPersonalizado());
 		}
 	}
 

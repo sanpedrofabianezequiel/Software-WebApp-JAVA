@@ -8,7 +8,7 @@ public class CredencialesInvalidasException extends Exception{
 	 public CredencialesInvalidasException(String msj) {
 		// TODO Auto-generated constructor stub
 		 super(msj);
-		 this.msjPersonalizado=msj;
+		 this.msjPersonalizado="[ "+ msj + " ]";
 	}
 
 	public String getMsjPersonalizado() {
