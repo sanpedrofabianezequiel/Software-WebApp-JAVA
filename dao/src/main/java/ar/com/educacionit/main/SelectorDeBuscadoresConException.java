@@ -42,11 +42,16 @@ public class SelectorDeBuscadoresConException {
 		int idxArticulo = 0;
 		for(BuscadorBase buscador : buscadores) {
 			
-			Articulo[] resultados = buscador.buscar();
-			
-			for(Articulo resulado : resultados) {
-				todosLosArticulos[idxArticulo] = resulado;
-				idxArticulo++;
+			try {
+
+				Articulo[] resultados = buscador.buscar();
+				
+				for(Articulo resulado : resultados) {
+					todosLosArticulos[idxArticulo] = resulado;
+					idxArticulo++;
+				}	
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
 			}
 		}
 		

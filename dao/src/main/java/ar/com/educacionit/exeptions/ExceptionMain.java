@@ -15,7 +15,7 @@ public class ExceptionMain {
 		
 		//Checkd clases que herdan de EXCEPTION
 
-		BuscadorBase b = null;
+		BuscadorBase b = new BuscadorLibro("Java Developer");
 		
 		try {
 			
@@ -27,7 +27,7 @@ public class ExceptionMain {
 			b= new BuscadorGeneral("clave");
 			System.out.println("Recupero");
 		}catch (BusquedaException  e) {
-			e.getStackTrace();
+			e.printStackTrace();
 		}
 		finally {
 			

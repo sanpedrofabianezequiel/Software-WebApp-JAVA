@@ -4,6 +4,7 @@ import ar.com.educacionit.buscador.BuscadorBase;
 import ar.com.educacionit.buscador.BuscadorLibro;
 import ar.com.educacionit.buscador.BuscadorMusica;
 import ar.com.educacionit.buscador.BuscadorPelicula;
+import ar.com.educacionit.buscador.BusquedaException;
 import ar.com.educacionit.buscador.interfaces.Mostrable;
 import ar.com.educacionit.buscador.interfaces.Ordenable;
 import ar.com.educacionit.buscador.interfaces.Paginable;
@@ -41,13 +42,18 @@ public class SelectorDeBuscadores {
 		Articulo[] todosLosArticulos = new Articulo[5];
 		int idxArticulo = 0;
 		for(BuscadorBase buscador : buscadores) {
-			
-			Articulo[] resultados = buscador.buscar();
-			
-			for(Articulo resulado : resultados) {
-				todosLosArticulos[idxArticulo] = resulado;
-				idxArticulo++;
+			try {
+				
+				Articulo[] resultados = buscador.buscar();
+				
+				for(Articulo resulado : resultados) {
+					todosLosArticulos[idxArticulo] = resulado;
+					idxArticulo++;
+				}
+			} catch (BusquedaException e) {
+				System.out.println("Error " + e.getMessage());
 			}
+			
 		}
 		
 		//muestro los resultados

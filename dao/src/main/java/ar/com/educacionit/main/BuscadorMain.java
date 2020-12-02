@@ -2,11 +2,12 @@ package ar.com.educacionit.main;
 
 import ar.com.educacionit.buscador.BuscadorBase;
 import ar.com.educacionit.buscador.BuscadorPelicula;
+import ar.com.educacionit.buscador.BusquedaException;
 import ar.com.educacionit.model.Articulo;
 
 public class BuscadorMain {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws BusquedaException {
 		
 		String claveBuscadaEnLaPantalla = "Harry Potter";
 

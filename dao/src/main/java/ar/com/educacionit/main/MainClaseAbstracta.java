@@ -2,6 +2,7 @@ package ar.com.educacionit.main;
 
 import ar.com.educacionit.buscador.BuscadorBase;
 import ar.com.educacionit.buscador.BuscadorLibro;
+import ar.com.educacionit.buscador.BusquedaException;
 
 public class MainClaseAbstracta {
 
@@ -17,7 +18,12 @@ public class MainClaseAbstracta {
 			}
 		};
 		
-		b2.buscar();
+		try {
+			b2.buscar();
+		} catch (BusquedaException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 
 }
