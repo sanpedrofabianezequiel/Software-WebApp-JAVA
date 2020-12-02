@@ -21,7 +21,7 @@ public abstract class BuscadorBase implements Ordenable {
 	//firma del metodo
 	public abstract String getSQLHija();
 	
-	public final Articulo[] buscar() {
+	public final Articulo[] buscar() throws BusquedaException {
 		
 		String consultaBase = "SELECT * FROM ARTICULO ";
 		
@@ -36,7 +36,7 @@ public abstract class BuscadorBase implements Ordenable {
 		return resultados;
 	}
 	
-	public Articulo[] ejecutarConsulta(String sql) BusquedaException {
+	public Articulo[] ejecutarConsulta(String sql) throws BusquedaException {
 		// base de datos....
 		
 		
@@ -51,12 +51,11 @@ public abstract class BuscadorBase implements Ordenable {
 
 			return new Articulo[] {libro1, libro2, libro3};
 		} catch (CredencialesInvalidasException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			throw new BusquedaException("No se pudo ejecutar la consulta " + sql,e );
 		}
 		
 		
-		return null;
+		
 	}
 
 	public String getClave() {
