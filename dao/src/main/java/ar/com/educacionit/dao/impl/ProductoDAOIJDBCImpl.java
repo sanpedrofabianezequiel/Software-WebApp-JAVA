@@ -3,6 +3,7 @@ package ar.com.educacionit.dao.impl;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 import ar.com.educacionit.dao.ProductoDAO;
 import ar.com.educacionit.domain.Producto;
@@ -39,9 +40,29 @@ public class ProductoDAOIJDBCImpl implements ProductoDAO {
 	}
 
 	@Override
-	public Producto[] findAll() {
-		// TODO Auto-generated method stub
-		return null;
+	public ArrayList<Producto> findAll() throws Exception {
+		System.out.println("Obteniendo todos los productos...");
+		Connection con= AdministradorDeConexiones.obtenerConexion();
+		
+		String sql= "SELECT * FROM PRODUCTO;";
+		
+		Statement st= con.createStatement();
+		
+		ResultSet rs= st.executeQuery(sql);//Ejecuta la consulta y guarda los resultados en el RS
+		
+		ArrayList<Producto> productos = new ArrayList<Producto>();
+		
+		while(rs.next()) {
+			//Comienza siempre desde el 1 en RESULTSET LA COLUMNA
+			Long id= rs.getLong(1);
+			String descripcion = rs.getString(2);
+			Float precio= rs.getFloat(3);
+			String codigo = rs.getString(4);
+			Producto producto = new Producto(id, descripcion, precio, codigo);
+			productos.add(producto);
+		}
+		
+		return productos;
 	}
 
 	@Override
@@ -52,7 +73,7 @@ public class ProductoDAOIJDBCImpl implements ProductoDAO {
 
 	@Override
 	public Producto deleteProducto(Long id) {
-		// TODO Auto-generated method stub
+		
 		return null;
 	}
 

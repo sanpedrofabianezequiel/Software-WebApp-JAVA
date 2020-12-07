@@ -1,5 +1,7 @@
 package ar.com.educacionit.dao.impl;
 
+import java.util.ArrayList;
+
 import ar.com.educacionit.dao.ProductoDAO;
 import ar.com.educacionit.domain.Producto;
 
@@ -18,7 +20,7 @@ public class ProductoDAOHibImpl implements ProductoDAO{
 	}
 
 	@Override
-	public Producto[] findAll() {
+	public ArrayList<Producto> findAll() {
 		// TODO Auto-generated method stub
 		return null;
 	}
