@@ -13,7 +13,7 @@ import ar.com.educacionit.domain.Producto;
 public interface ProductoDAO {
 
 	public Producto create(Producto producto) throws Exception;
-	public Producto getProductoById(Long id);
+	public Producto getProductoById(int id) throws Exception;
 	public ArrayList<Producto> findAll() throws Exception;
 	public Producto updateProducto(Producto producto);
 	public Producto deleteProducto(Long id);

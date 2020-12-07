@@ -14,7 +14,7 @@ public class ProductoDAOHibImpl implements ProductoDAO{
 	}
 
 	@Override
-	public Producto getProductoById(Long id) {
+	public Producto getProductoById(int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
