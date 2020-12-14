@@ -6,13 +6,13 @@ package ar.com.educacionit.domain;
  * 
  * */
 public class Producto {
-	private Long id;
+	private int id;
 	private String descripcion;
 	private Float precio;
 	private String codigo;
 	
 	//Constructores en el caso que venga con ID  o sin ID
-	public Producto(Long id, String descripcion, Float precio, String codigo) {
+	public Producto(int id, String descripcion, Float precio, String codigo) {
 		super();
 		this.id = id;
 		this.descripcion = descripcion;
@@ -25,10 +25,10 @@ public class Producto {
 		this.precio = precio;
 		this.codigo = codigo;
 	}
-	public Long getId() {
+	public int getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getDescripcion() {
@@ -48,6 +48,11 @@ public class Producto {
 	}
 	public void setCodigo(String codigo) {
 		this.codigo = codigo;
+	}
+	@Override
+	public String toString() {
+		return "Producto [id=" + id + ", descripcion=" + descripcion + ", precio=" + precio + ", codigo=" + codigo
+				+ "]";
 	}
 	
 	
