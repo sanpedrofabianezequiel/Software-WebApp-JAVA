@@ -18,5 +18,6 @@
     <module>ui</module>
     <module>test</module>
     <module>service</module>
+    <module>WebApp</module>
   </modules>
 </project>
