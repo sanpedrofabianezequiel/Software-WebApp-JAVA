@@ -1,5 +1,6 @@
 package ar.com.educacionit.service;
 
+import java.util.Collection;
 import java.util.List;
 
 import ar.com.educacionit.dao.ProductoDAO;
@@ -12,10 +13,9 @@ public class ProductoServiceImpl implements ProductoService {
 	private ProductoDAO prductoDao;
 	
 	public ProductoServiceImpl() {
-		this.prductoDao =null;
-		if (true) {
-			 new ProductoDAOIJDBCImpl();
-		}
+		
+		this.prductoDao= new ProductoDAOIJDBCImpl();
+		
 	}
 
 	@Override
@@ -30,8 +30,13 @@ public class ProductoServiceImpl implements ProductoService {
 	}
 
 	@Override
-	public List<Producto> obtenerTodosProductos() {
+	public Collection<Producto> obtenerTodosProductos() throws ServiceException {
 		// TODO Auto-generated method stub
-		return null;
+		try {
+			return prductoDao.findAll();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			throw new ServiceException("obteniendo todos los producto"+ e);
+		}
 	}
 }

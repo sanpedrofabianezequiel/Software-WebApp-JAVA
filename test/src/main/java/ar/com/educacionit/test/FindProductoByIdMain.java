@@ -7,6 +7,7 @@ import java.util.TreeSet;
 
 import ar.com.educacionit.dao.ProductoDAO;
 import ar.com.educacionit.dao.comparadores.Ascendente;
+import ar.com.educacionit.dao.comparadores.Descendente;
 import ar.com.educacionit.dao.impl.ProductoDAOIJDBCImpl;
 import ar.com.educacionit.domain.Producto;
 
@@ -70,6 +71,9 @@ public class FindProductoByIdMain {
 		
 		//LLENAMOS LA COLECCION con los porductos de finAll
 		resultAscendente.addAll(productos);
+		for (Producto item : resultAscendente) {
+			System.out.println(item);
+		}
 		
 		
 		
