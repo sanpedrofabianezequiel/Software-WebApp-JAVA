@@ -2,6 +2,7 @@ package ar.com.educacionit.dao;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collection;
 
 import ar.com.educacionit.domain.Producto;
 import ar.com.educacionit.exeptions.DaoException;
@@ -17,7 +18,7 @@ public interface ProductoDAO {
 
 	public Producto create(Producto producto) throws Exception;
 	public Producto getProductoById(int id) throws Exception;
-	public ArrayList<Producto> findAll() throws Exception;
+	public Collection<Producto> findAll() throws Exception;
 	public Producto updateProducto(Producto producto) throws Exception;
 	public Producto deleteProducto(int id) throws DaoException,Exception,ProductoNoExisteException;
 	public Producto deleteProducto(String codiStringcodigo) throws SQLException, Exception;
