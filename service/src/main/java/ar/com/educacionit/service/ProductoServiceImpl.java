@@ -39,4 +39,15 @@ public class ProductoServiceImpl implements ProductoService {
 			throw new ServiceException("obteniendo todos los producto"+ e);
 		}
 	}
+
+	@Override
+	public Producto actualizarProducto(Producto producto) throws ServiceException {
+	
+		
+		try {
+			return this.prductoDao.updateProducto(producto);
+		} catch (Exception e) {
+			throw new ServiceException("Error Actualizando producto"+ e);
+		}
+	}
 }
