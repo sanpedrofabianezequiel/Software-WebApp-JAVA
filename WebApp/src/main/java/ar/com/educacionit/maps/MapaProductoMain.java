@@ -64,6 +64,27 @@ public class MapaProductoMain {
 		for (Producto item : valores) {
 			System.out.println("ID:" +item.getId() +" .. "+item.getCodigo() + item.getDescripcion());
 		}
+		
+		
+		
+		
+		System.out.println("---------------------------------");
+		
+		//Claves
+		Set<Integer> llaves=mapaProductos.keySet();
+		//Recoremos las claves y  los valores del mismo
+		for (Integer item : llaves) {
+			
+			if (item.equals(2)) {
+				//Segun la clave obtenemos el valor
+				Float values=	(float) (mapaProductos.get(item).getPrecio() * 1.1);
+				//Setiamos el valor
+				mapaProductos.get(item).setPrecio(values);
+				System.out.println(values);
+			}
+			
+		}
+		
 	}
 
 }
