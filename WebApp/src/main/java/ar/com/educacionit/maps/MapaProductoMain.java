@@ -22,7 +22,8 @@ public class MapaProductoMain {
 	public static void main(String[] args) throws ServiceException {
 		//Creacion de MAPA
 		Map<Integer, Producto> mapaProductos= new HashMap<Integer, Producto>();
-		
+		Map<Integer, Producto> mapaProductos2= new HashMap<Integer, Producto>();
+
 		//Determinamos si el mapa es vacio
 		boolean isMapaVacio= mapaProductos.isEmpty();
 		
@@ -38,6 +39,11 @@ public class MapaProductoMain {
 		mapaProductos.put(clave	, valor);
 		mapaProductos.put(clave2	, valor2);
 		
+		
+		//AGREGAMOS TODOS LO VALORES DEL PRIMER MAPA EN EL MAPA 2
+		mapaProductos2.putAll(mapaProductos);
+		
+		
 	/*	//mostramos la informacion
 		System.out.println(	mapaProductos.toString());
 		
@@ -49,7 +55,7 @@ public class MapaProductoMain {
 		Producto prodDelete=mapaProductos.remove(1);
 		System.out.println("El HashMap esta vacio : " + mapaProductos +"\nSe elimino: "+prodDelete);
 	*/
-		//Metodos para obtener todas las clases
+		//Metodos para obtener todas las CLAVES
 		Set<Integer> keys=	mapaProductos.keySet();
 		/*for (Integer item : keys) {
 			System.out.println(item);
@@ -111,13 +117,17 @@ public class MapaProductoMain {
 		
 		//Con Iterator recorro el Iterator
 		//Iterator<Entry<Integer, Producto>> itEntry=	mapEntry.iterator();
+	
+		
+		//----------------------------------------------------------------------
+		//RECORREMOS TODO EL MAPA CON SUS KEY Y OBTENEMOS SUS VALORES
 		
 		Iterator<Entry<Integer, Producto>> itEntry=	mapaProductos.entrySet().iterator();
 		while(itEntry.hasNext()) {
 			Entry<Integer, Producto> rEntry = itEntry.next();
 			int key= rEntry.getKey();
 			Producto value= rEntry.getValue();
-			
+			System.out.println("Key: "+ key+ "...Value : "  +value);
 		}
 		
 		
