@@ -11,5 +11,7 @@ public interface ProductoService {
 	public Collection<Producto> obtenerTodosProductos() throws ServiceException;
 	public Producto obtenerProductoPorId(int id) throws ServiceException;
 	public Producto actualizarProducto(Producto producto) throws ServiceException;
+	public Producto	crearProducto(Producto producto) throws ServiceException;
+	public Producto eliminar(int id)throws ServiceException;
 }
 	
