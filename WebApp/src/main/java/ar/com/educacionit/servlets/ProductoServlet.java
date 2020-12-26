@@ -25,7 +25,13 @@ public class ProductoServlet  extends HttpServlet{
 		try {
 			Collection<Producto> productos=	ps.obtenerTodosProductos();
 			
-			RequestDispatcher
+			
+			//Maping K V
+			req.setAttribute("key", productos);//en Razor =>request.getAtribute("Key");
+			
+			
+			RequestDispatcher rd=req.getRequestDispatcher("productos.jsp");//---URL
+			rd.forward(req, resp);
 			
 			
 		} catch (ServiceException e) {
