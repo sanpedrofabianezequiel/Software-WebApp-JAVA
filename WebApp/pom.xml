@@ -32,6 +32,7 @@
     </dependency>
   </dependencies>
   <build>
+  <!-- Contexto de la Aplicacion ej : http://localhost:8080/contexto -->
     <finalName>WebApp</finalName>
   </build>
 </project>
