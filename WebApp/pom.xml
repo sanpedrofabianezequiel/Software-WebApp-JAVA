@@ -30,6 +30,20 @@
     	<artifactId>service</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
+    
+    <!-- Agregamos JSP Y SERVELET API -->
+    <dependency>
+    	<groupId>javax.servlet</groupId>
+    	<artifactId>javax.servlet-api</artifactId>
+    	<version>3.1.0</version>
+    	<scope>provided</scope>
+    </dependency>
+    <dependency>
+    	<groupId>javax.servlet.jsp</groupId>
+    	<artifactId>javax.servlet.jsp-api</artifactId>
+    	<version>2.3.1</version>
+    	<scope>provided</scope>
+    </dependency>
   </dependencies>
   <build>
   <!-- Contexto de la Aplicacion ej : http://localhost:8080/contexto -->
