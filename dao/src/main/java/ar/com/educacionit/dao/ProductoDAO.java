@@ -23,5 +23,6 @@ public interface ProductoDAO {
 	public Producto deleteProducto(int id) throws DaoException,Exception,ProductoNoExisteException;
 	public Producto deleteProducto(String codiStringcodigo) throws SQLException, Exception;
 	public Producto deleteByCodigo(String cod) throws SQLException, Exception;
+	public Producto getProductoPorCodigo(String cod) throws SQLException,Exception;
 	
 }

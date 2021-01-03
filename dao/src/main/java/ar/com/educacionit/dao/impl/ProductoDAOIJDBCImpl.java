@@ -265,4 +265,47 @@ public class ProductoDAOIJDBCImpl implements ProductoDAO {
 		return pdDelete;
 	}
 
+	@Override
+	public Producto getProductoPorCodigo(String cod) throws SQLException, Exception {
+
+		System.out.println("Obteniendo el producto por Codigo :... " + cod);
+		Connection conn=null;
+		Statement st =null;
+		ResultSet rs=null;
+		Producto producto=null;
+		try {
+			conn=AdministradorDeConexiones.obtenerConexion();
+			conn.setAutoCommit(false);
+			String sql ="SELECT * FROM PRODUCTO WHERE CODIGO = "+ cod;
+			
+			st=conn.createStatement();
+		    rs= st.executeQuery(sql);
+		
+			if (rs.next()) {
+				//alt+shif +m
+				 producto = extracted(rs);
+			}
+			//si esta todo bien commitiamos
+			conn.commit();
+		}catch (Exception e) {
+			conn.rollback();
+			throw e;
+		}finally {
+			if (conn != null && !conn.isClosed()) {//Si la conexion sigue abierta
+				conn.close();
+			}			
+			if (st != null &&  !st.isClosed()) {
+				st.close();
+			}
+			if (rs!= null && !rs.isClosed()) {
+				rs.close();
+			}	
+		
+		}
+		
+		
+		return producto;	
+		
+	}
+
 }

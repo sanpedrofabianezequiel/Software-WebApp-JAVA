@@ -80,4 +80,14 @@ public class ProductoServiceImpl implements ProductoService {
 		}
 		return null;
 	}
+
+	@Override
+	public Producto obtenerProductoPorCodigo(String codigo) throws ServiceException {
+		try {
+			return this.prductoDao.getProductoPorCodigo(codigo);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			throw new ServiceException("Obteniendo Produto por Codigo" +e);
+		}
+	}
 }
