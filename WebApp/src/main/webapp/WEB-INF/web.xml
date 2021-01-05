@@ -4,4 +4,13 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+  <!--  Una forma de Hacerlo
+  <error-page>
+  	<exception-type>java.lang.NullPointerException</exception-type>
+  	<location>/error.jsp</location>
+  </error-page> -->
+  <error-page>
+  	<error-code>500</error-code>	
+  	<location>/error.jsp</location>
+  </error-page>
 </web-app>
