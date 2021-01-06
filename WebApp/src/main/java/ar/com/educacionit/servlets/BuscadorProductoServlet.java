@@ -59,7 +59,23 @@ public class BuscadorProductoServlet extends HttpServlet {
 		}
 		
 		
-		super.doPost(req, resp);
+	}
+		
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		//Obtener todos los productos y los productoscreados en Nuevo procuto
+		try {
+			Collection<Producto> productos= psi.obtenerTodosProductos();
+			
+			//Guardamos en Session
+			req.setAttribute("productos", productos);
+			
+			RequestDispatcher rd= req.getRequestDispatcher("resultadoBusqueda.jsp");
+			rd.forward(req, resp);
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
 	}
 	
 }
