@@ -14,9 +14,14 @@ import ar.com.educacionit.service.ProductoService;
 import ar.com.educacionit.service.ProductoServiceImpl;
 import ar.com.educacionit.service.exception.ServiceException;
 
+@WebServlet("/nuevoProducto")
 public class NuevoProductoServlet  extends HttpServlet {
 
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 4285616910992195392L;
 	private ProductoService ps;
 	 public NuevoProductoServlet() {
 		 System.out.println("Creando " +getClass().getSimpleName());
@@ -37,15 +42,15 @@ public class NuevoProductoServlet  extends HttpServlet {
 		
 		boolean hasError=false;
 		//Validamos Archiv.properties
-		if (codigo == null) {
+		if (codigo == null || codigo.isEmpty()) {
 			req.setAttribute("errorCodigo", "Debe ingresar el codigo valido");
 			hasError=true;
 		}
-		if (precio == null) {
+		if (precio == null|| precio.isEmpty()) {
 			req.setAttribute("errorPrecio", "Debe ingresa el precio valido");
 			hasError=true;
 		}
-		if (descripcion == null) {
+		if (descripcion == null|| descripcion.isEmpty()) {
 			req.setAttribute("errorDescripcion", "Ingresa una descripcion valida");
 			hasError=true;
 		}
@@ -60,8 +65,8 @@ public class NuevoProductoServlet  extends HttpServlet {
 				//En caso de que este bien envimos ese Nuevo producto a la PAGINA LSTADO
 				
 				Producto pd=ps.crearProducto(nuevoProducto);
-				rd = req.getRequestDispatcher("/buscarProducto");//t@WebServlet("/buscarProducto")
-				
+				//rd = req.getRequestDispatcher("/buscarProducto");//t@WebServlet("/buscarProducto")
+				resp.sendRedirect(req.getContextPath()+"/buscarProducto");
 			} catch (ServiceException e) {
 				
 				e.printStackTrace();
@@ -69,7 +74,13 @@ public class NuevoProductoServlet  extends HttpServlet {
 				//Por el Catch me voy por la intancia que ya tiene le RD.FORWARD(REQ,RESP)
 				rd= req.getRequestDispatcher("nuevoProducto.jsp");
 				rd.forward(req, resp);
-			}
+			}//finally {
+				//Finalmente lo enviamos la url
+				//Tenemos un error cuando redirijimos asi, que no me toma el metodo
+				//GET
+				//lO REEMPLAZAMOS CON SENREDIREC(GETCONTEXTPATCH()+"CONTROLADOR")
+				//rd.forward(req, resp);
+			//}
 		}
 		
 		

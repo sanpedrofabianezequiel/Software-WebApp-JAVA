@@ -7,3 +7,14 @@ en El WAR
 EN la showTerminal => mvn clean package
 
 en el Parent en la termina => mvn clean install
+
+
+Manejo de Sessiones en  JSP-CONTROLADOR
+
+En el WebServlet/Controlador
+req.getSession().setAttribute(name,object)
+
+En el Servlet/Front
+session.getAttribute(name)
+Ejemplo
+<%Collection<Producto> pds=(Collection<Producto>) session.getAttribute("productos"); %>

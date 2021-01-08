@@ -68,9 +68,10 @@ public class BuscadorProductoServlet extends HttpServlet {
 			Collection<Producto> productos= psi.obtenerTodosProductos();
 			
 			//Guardamos en Session
-			req.setAttribute("productos", productos);
+			//Determinamos la Session previamente
+			req.getSession().setAttribute("productos", productos);
 			
-			RequestDispatcher rd= req.getRequestDispatcher("resultadoBusqueda.jsp");
+			RequestDispatcher rd= req.getRequestDispatcher("resultadosBusqueda.jsp");
 			rd.forward(req, resp);
 			
 		} catch (Exception e) {
