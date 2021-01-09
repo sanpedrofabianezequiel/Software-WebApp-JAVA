@@ -5,7 +5,26 @@
 
 	<body>
 		<div class="container">
-		
+				<%@include file="navBar.jsp" %>
+						<%
+							String errorGeneral= (String)request.getAttribute("errorGeneral");
+							if(errorGeneral != null){
+						 %>	
+						 <div class="row">
+						 	<div class="col-12">
+						 	
+						 		<div class="alert alert-danger" role="alert">
+						 		<%=errorGeneral%>
+						 		</div>
+						 	</div>
+
+						 </div>
+						 	 
+						 	
+						 <%
+							}
+						 %>
+	
 			<div class="row">
 				<div class ="col-6">
 					<form action="<%=request.getContextPath()%>/nuevoProducto" method="post">

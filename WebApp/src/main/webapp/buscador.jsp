@@ -5,6 +5,7 @@
 	</head>
 	<body>
 		<div class="container">
+		<%@include file="navBar.jsp" %>
 			<div class="row">
 				
 				<div class="col-6">

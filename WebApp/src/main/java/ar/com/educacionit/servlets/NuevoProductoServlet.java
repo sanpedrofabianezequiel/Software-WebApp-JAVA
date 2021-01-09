@@ -70,7 +70,7 @@ public class NuevoProductoServlet  extends HttpServlet {
 			} catch (ServiceException e) {
 				
 				e.printStackTrace();
-				req.setAttribute("errorGenerarl", e.getMessage());
+				req.setAttribute("errorGeneral", e.getMessage());
 				//Por el Catch me voy por la intancia que ya tiene le RD.FORWARD(REQ,RESP)
 				rd= req.getRequestDispatcher("nuevoProducto.jsp");
 				rd.forward(req, resp);
