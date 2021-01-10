@@ -52,7 +52,7 @@ public class ParseArchivoServlet extends HttpServlet {
 		
 		req.setAttribute("listadoOK",listOk);
 
-		req.setAttribute("listadoFail",listFail);
+		req.getSession().setAttribute("listadoFail",listFail);
 		
 		RequestDispatcher rd= req.getRequestDispatcher("listadoGeneral.jsp");
 		rd.forward(req, resp);

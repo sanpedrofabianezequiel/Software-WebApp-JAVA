@@ -52,7 +52,7 @@ public class FileParser {
 				result.add(producto);
 			}else {
 				
-				primerLinea=true;
+				primerLinea=false;
 			}
 			
 		}
