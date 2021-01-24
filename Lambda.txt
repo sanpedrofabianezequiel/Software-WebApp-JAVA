@@ -1,0 +1,22 @@
+List<Integer> precio = Arrays.asList(100,200,300);
+
+List<Integer> filtrados = precios.stream()
+			.filter( precio -> precio > 100)
+			.collect(Collectors.toList());
+
+List<String> filtrados = precios.stream()
+			.filter( precio -> precio > 100)
+			.map(precioFiltrado -> new String("Valor" +precioFiltrado))
+			.collect(Collectors.toList());
+
+Double filtrados = precios.stream()
+			.filter( precio -> precio > 100)
+			.map(precioFiltrado -> new Double(precioFiltrado))
+			//.collect(Collectors.toList());
+			.reduce(0d,Double::sum);
+
+Float filtrados = precios.stream()
+			//.filter( precio -> precio > 100)
+			.map(p -> p.getPrecio())
+			//.collect(Collectors.toList());
+			.reduce(0d,Float::sum);
