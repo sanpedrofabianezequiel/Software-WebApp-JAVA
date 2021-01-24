@@ -15,6 +15,7 @@ import ar.com.educacionit.service.ProductoService;
 import ar.com.educacionit.service.ProductoServiceImpl;
 import ar.com.educacionit.service.exception.ServiceException;
 import ar.com.educacionit.servlets.parser.FileParser;
+import ar.com.educacionit.webapp.enums.CSVFileParser;
 
 @WebServlet("/parseArchivoServlet")
 public class ParseArchivoServlet extends HttpServlet {
@@ -27,7 +28,7 @@ public class ParseArchivoServlet extends HttpServlet {
 		//Obtenemos el archivo
 		String filePath= getServletContext().getRealPath("nuevos-productos.csv");
 		
-		FileParser fileParse= new FileParser(filePath);
+		FileParser fileParse= new CSVFileParser(filePath);
 		
 		List<Producto> result= fileParse.parseArchivo();
 		

@@ -9,15 +9,19 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.imageio.IIOException;
+
 import ar.com.educacionit.domain.Producto;
 
-public class FileParser {
+public abstract class FileParser {
 
-	private String path;
+	protected String path;
 	public FileParser(String filePath) {
 
 		this.path= filePath;
 	}
+	public abstract List<Producto> parseArchivo() throws  IOException;
+	/*
 	public List<Producto> parseArchivo() throws IOException{
 	
 		List<Producto> result= new ArrayList<Producto>();
@@ -44,7 +48,7 @@ public class FileParser {
 				 * [2]=15500
 				 * [3]=1
 				 * */
-				String codigo=array[0];
+		/*		String codigo=array[0];
 				String descripcion=array[1];
 				String precio= array[2];
 				
@@ -60,6 +64,6 @@ public class FileParser {
 		br.close();
 		
 		return result;
-	}
+	}*/
 
 }
